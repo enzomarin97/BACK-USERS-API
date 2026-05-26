@@ -25,7 +25,7 @@ public class UserController {
      * Endpoint para obtener la lista completa de usuarios.
      * Ruta: GET http://localhost:8080/api/users/list
     */
-    @GetMapping("list")
+    @GetMapping("/list")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.findAllUsers();
         
