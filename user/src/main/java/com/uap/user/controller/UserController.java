@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,8 +27,8 @@ public class UserController {
      * Ruta: GET http://localhost:8080/api/users/list
     */
     @GetMapping("/list")
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.findAllUsers();
+    public ResponseEntity<List<User>> getAllUsers(@RequestParam String name) {
+        List<User> users = userService.findAllUsers(name);
         
         // Es una buena práctica envolver la respuesta en un ResponseEntity
         // para manejar correctamente los estados HTTP (en este caso, 200 OK)

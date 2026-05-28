@@ -22,7 +22,7 @@ public class UserService {
      * Busca y devuelve todos los usuarios de la base de datos.
      * @return Lista de entidades User
      */
-    public List<User> findAllUsers() {
-        return userRepository.findAll();
+    public List<User> findAllUsers(String fullName) {
+        return userRepository.findByFullName(fullName);
     }
 }
